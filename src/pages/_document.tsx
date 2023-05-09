@@ -15,14 +15,19 @@ export default function Document() {
 				/>
 			</Head>
 			<body>
-				
 				<Navigation></Navigation>
 				<Main />
 				<NextScript />
 
 				<Footer></Footer>
-				<Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></Script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
+				<Script
+					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
+					async
+				></Script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"
+					async
+				></script>
 			</body>
 		</Html>
 	);
