@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
 	return (
@@ -33,7 +34,7 @@ export default function Footer() {
 						<div className="col-span-full lg:col-span-2">
 							{/* logo - start */}
 							<div className="mb-4 lg:-mt-2">
-								<a
+								<Link
 									href="/"
 									className="text-black-800 inline-flex items-center gap-2 text-xl font-bold md:text-2xl"
 									aria-label="logo"
@@ -44,7 +45,7 @@ export default function Footer() {
 										height={200}
 										alt="Logo"
 									></Image>
-								</a>
+								</Link>
 							</div>
 							{/* logo - end */}
 							<p className="mb-6 text-white sm:pr-8">

@@ -82,13 +82,13 @@ export default function Navigation() {
 			{/* PC NAVBAR */}
 			<nav className="bg-white border-gray-200 shadow-lg">
 				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-					<a href="/" className="flex items-center">
-						<img
+					<Link href="/" className="flex items-center">
+						<Image
 							src="./images/PetCare-Large-Logo-Web.png"
 							className="h-12 mr-3"
 							alt="Flowbite Logo"
 						/>
-					</a>
+					</Link>
 					<button
 						data-collapse-toggle="navbar-default"
 						type="button"

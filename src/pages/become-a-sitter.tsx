@@ -187,13 +187,13 @@ export default function BecomeASitter() {
 								</div>
 								<blockquote>
 									<p className="text-2xl font-semibold text-gray-900 dark:text-white">
-										"Flowbite is just awesome. It contains tons of predesigned
+										Flowbite is just awesome. It contains tons of predesigned
 										components and pages starting from login screen to complex
-										dashboard. Perfect choice for your next SaaS application."
+										dashboard. Perfect choice for your next SaaS application.
 									</p>
 								</blockquote>
 								<figcaption className="flex items-center mt-6 space-x-3">
-									<img
+									<Image
 										className="w-6 h-6 rounded-full"
 										src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
 										alt="profile picture"
@@ -265,7 +265,7 @@ export default function BecomeASitter() {
 									</p>
 								</blockquote>
 								<figcaption className="flex items-center mt-6 space-x-3">
-									<img
+									<Image
 										className="w-6 h-6 rounded-full"
 										src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
 										alt="profile picture"
