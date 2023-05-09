@@ -31,7 +31,7 @@ export default function Sponsors() {
 					{/* logo - start */}
 					<div className="flex justify-center text-gray-400">
 						<Image
-							src="/images/logos/logo-abc.svg"
+							src="/images/logos/logo-ABC.svg"
 							width={100}
 							height={100}
 							alt="El Mundo Logo"
