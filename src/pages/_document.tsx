@@ -24,10 +24,10 @@ export default function Document() {
 					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
 					async
 				></Script>
-				<Script
+				<script
 					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"
 					async
-				></Script>
+				></script>
 			</body>
 		</Html>
 	);

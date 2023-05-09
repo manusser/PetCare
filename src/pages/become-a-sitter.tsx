@@ -1,6 +1,7 @@
 import { PricingCards } from "@/components/Elements/PricingCards";
 import BankNotesIcon from "@/components/Icons/BankNotesIcon";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BecomeASitter() {
 	return (
@@ -26,23 +27,25 @@ export default function BecomeASitter() {
 							</h1>
 							En petcare te lo ponemos fácil: crea una cuenta en nuestra
 							plataforma y empieza a obtener ingresos desde el primer día.
-							<div className="mt-6 lg:mb-0 mb-6">
-								<button
-									type="button"
-									data-te-ripple-init
-									data-te-ripple-color="light"
-									className="bg-orange-400 text-white active:bg-orange-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out"
-								>
-									<span className="flex gap-2">
-										Conviértete en Cuidador{" "}
-										<BankNotesIcon
-											width="6"
-											height="6"
-											color="white"
-										></BankNotesIcon>
-									</span>
-								</button>
-							</div>
+							<Link href="/register">
+								<div className="mt-6 lg:mb-0 mb-6">
+									<button
+										type="button"
+										data-te-ripple-init
+										data-te-ripple-color="light"
+										className="bg-orange-400 text-white active:bg-orange-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out"
+									>
+										<span className="flex gap-2">
+											Conviértete en Cuidador{" "}
+											<BankNotesIcon
+												width="6"
+												height="6"
+												color="white"
+											></BankNotesIcon>
+										</span>
+									</button>
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -187,23 +190,26 @@ export default function BecomeASitter() {
 								</div>
 								<blockquote>
 									<p className="text-2xl font-semibold text-gray-900 dark:text-white">
-										Flowbite is just awesome. It contains tons of predesigned
-										components and pages starting from login screen to complex
-										dashboard. Perfect choice for your next SaaS application.
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Obcaecati fugit doloremque commodi nulla accusamus suscipit
+										ipsa magnam numquam cumque sunt consectetur deleniti sequi
+										ipsam natus maxime, nihil odio temporibus quasi!
 									</p>
 								</blockquote>
 								<figcaption className="flex items-center mt-6 space-x-3">
 									<Image
 										className="w-6 h-6 rounded-full"
-										src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+										src="/images/bonnie-green.png"
 										alt="profile picture"
+										width={24}
+										height={24}
 									/>
 									<div className="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
 										<cite className="pr-3 font-medium text-gray-900 dark:text-white">
-											Bonnie Green
+											Bonnie Jhay
 										</cite>
 										<cite className="pl-3 text-sm text-gray-500 dark:text-gray-400">
-											CTO at Flowbite
+											Cliente
 										</cite>
 									</div>
 								</figcaption>
@@ -267,15 +273,17 @@ export default function BecomeASitter() {
 								<figcaption className="flex items-center mt-6 space-x-3">
 									<Image
 										className="w-6 h-6 rounded-full"
-										src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+										src="/images/bonnie-green.png"
 										alt="profile picture"
+										width={24}
+										height={24}
 									/>
 									<div className="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
 										<cite className="pr-3 font-medium text-gray-900 dark:text-white">
-											Bonnie Green
+											Jeff Green
 										</cite>
 										<cite className="pl-3 text-sm text-gray-500 dark:text-gray-400">
-											CTO at Flowbite
+											Cliente
 										</cite>
 									</div>
 								</figcaption>

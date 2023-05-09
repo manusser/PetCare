@@ -87,7 +87,7 @@ export default function Navigation() {
 							src="/images/PetCare-Large-Logo-Web.png"
 							className="h-12 mr-3"
 							alt="Flowbite Logo"
-							width={170}
+							width={200}
 							height={120}
 						/>
 					</Link>
