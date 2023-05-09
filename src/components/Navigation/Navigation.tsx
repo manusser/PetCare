@@ -84,9 +84,11 @@ export default function Navigation() {
 				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 					<Link href="/" className="flex items-center">
 						<Image
-							src="./images/PetCare-Large-Logo-Web.png"
+							src="/images/PetCare-Large-Logo-Web.png"
 							className="h-12 mr-3"
 							alt="Flowbite Logo"
+							width={170}
+							height={120}
 						/>
 					</Link>
 					<button
