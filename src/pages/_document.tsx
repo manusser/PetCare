@@ -13,6 +13,10 @@ export default function Document() {
 					href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
 					rel="stylesheet"
 				/>
+				<link
+					href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+					rel="stylesheet"
+				></link>
 			</Head>
 			<body>
 				<Navigation></Navigation>
@@ -20,10 +24,10 @@ export default function Document() {
 				<NextScript />
 
 				<Footer></Footer>
-				<Script
+				<script
 					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
 					async
-				></Script>
+				></script>
 				<script
 					src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"
 					async

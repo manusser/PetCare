@@ -155,7 +155,7 @@ export default function Home() {
 
 							<section className="flex w-full justify-center">
 								<div
-									className="grid w-[20rem] grid-cols-2 space-x-2 rounded-xl bg-gray-200 p-2"
+									className="grid w-[20rem] grid-cols-2 space-x-2 rounded-xl bg-white p-1"
 									x-data="app"
 								>
 									<div>
@@ -197,7 +197,7 @@ export default function Home() {
 					<div
 						date-rangepicker=""
 						datepicker-format="dd/mm/yyyy"
-						className="flex items-center mt-5 gap-8"
+						className="items-center mt-5 gap-8 block md:flex"
 					>
 						<div>
 							<span className="mx-4 text-indigo-100">Desde...</span>
@@ -220,7 +220,7 @@ export default function Home() {
 								<input
 									name="start"
 									type="text"
-									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
 									placeholder="Fecha de inicio"
 								/>
 							</div>
@@ -246,7 +246,7 @@ export default function Home() {
 								<input
 									name="end"
 									type="text"
-									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
 									placeholder="Fecha de fin"
 								/>
 							</div>
@@ -553,7 +553,7 @@ export default function Home() {
 			</section>
 
 			{/* SPONSORS */}
-			<section className="">
+			<section>
 				<Sponsors />
 			</section>
 

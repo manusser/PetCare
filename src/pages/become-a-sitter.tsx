@@ -1,7 +1,6 @@
 import { PricingCards } from "@/components/Elements/PricingCards";
 import BankNotesIcon from "@/components/Icons/BankNotesIcon";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function BecomeASitter() {
 	return (
@@ -27,35 +26,33 @@ export default function BecomeASitter() {
 							</h1>
 							En petcare te lo ponemos fácil: crea una cuenta en nuestra
 							plataforma y empieza a obtener ingresos desde el primer día.
-							<Link href="/register">
-								<div className="mt-6 lg:mb-0 mb-6">
-									<button
-										type="button"
-										data-te-ripple-init
-										data-te-ripple-color="light"
-										className="bg-orange-400 text-white active:bg-orange-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out"
-									>
-										<span className="flex gap-2">
-											Conviértete en Cuidador{" "}
-											<BankNotesIcon
-												width="6"
-												height="6"
-												color="white"
-											></BankNotesIcon>
-										</span>
-									</button>
-								</div>
-							</Link>
+							<div className="mt-6 lg:mb-0 mb-6">
+								<button
+									type="button"
+									data-te-ripple-init
+									data-te-ripple-color="light"
+									className="bg-orange-400 text-white active:bg-orange-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out"
+								>
+									<span className="flex gap-2">
+										Conviértete en Cuidador{" "}
+										<BankNotesIcon
+											width="6"
+											height="6"
+											color="white"
+										></BankNotesIcon>
+									</span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section>
+			<section className="border-1 rounded-lg">
 				<div className="bg-white py-6 sm:py-8 lg:py-12">
 					<div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 						<div className="mb-10 md:mb-16">
-							<section className="bg-center bg-no-repeat bg-cover bg-[url('/images/beagle-tricolor-puppies-are-posing-wooden-box-cute-doggies-pets-playing-grey-wall-look-attented-playful-concept-motion-movement-action-negative-space.jpg')] bg-gray-500 bg-blend-multiply">
+							<section className="bg-fixed rounded-lg bg-center bg-no-repeat bg-cover bg-[url('/images/beagle-tricolor-puppies-are-posing-wooden-box-cute-doggies-pets-playing-grey-wall-look-attented-playful-concept-motion-movement-action-negative-space.jpg')] bg-gray-500 bg-blend-multiply">
 								<div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 									<div className="max-w-screen-md mb-8 lg:mb-16">
 										<h2 className="mb-4 text-4xl font-bold tracking-tight text-white dark:text-white">
@@ -139,7 +136,7 @@ export default function BecomeASitter() {
 							</section>
 						</div>
 
-						<div className="flex">
+						<div className="block md:flex">
 							<figure className="max-w-screen-md">
 								<div className="flex items-center mb-4 text-yellow-300">
 									<svg
