@@ -10,10 +10,17 @@ import HomeIcon from "@/components/Icons/HomeIcon";
 import PawWalkIcon from "@/components/Icons/PawWalkIcon";
 import HouseMoonIcon from "@/components/Icons/HouseMoonIcon";
 import SunIcon from "@/components/Icons/SunIcon";
+import { useEffect } from "react";
+import { getToken } from "@/controllers/userController";
+import isAuthenticated from "@/lib/isAuthenticated";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+	useEffect(() => {
+		// console.log(getToken());
+	}, []);
+
 	return (
 		<>
 			{/* BANNER */}
@@ -141,7 +148,7 @@ export default function Home() {
 								<input
 									type="text"
 									id="email-address-icon"
-									className="rounded-lg text-center text-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									className="rounded-lg text-center text-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
 									placeholder="Almoradí, Alicante"
 								/>
 							</div>

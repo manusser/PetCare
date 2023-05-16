@@ -6,8 +6,28 @@ import MessageIcon from "../Icons/MessageIcon";
 import QuestionMarkIcon from "../Icons/QuestionMark";
 import Link from "next/link";
 import Image from "next/image";
+import { getToken, logoutUser } from "@/controllers/userController";
+import { useEffect, useState } from "react";
+import { getUserData } from "@/lib/userData";
+import md5 from "md5";
 
 export default function Navigation() {
+	const [token, setToken] = useState<string | null>(null);
+	const [user, setUser] = useState<any>();
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const tokenls = getToken();
+
+			if (tokenls) {
+				setToken(tokenls);
+				const data = getUserData(tokenls);
+				setUser(data);
+				console.log(data);
+			}
+		}
+	}, []);
+
 	return (
 		<>
 			{/* MOBILE NAVBAR */}
@@ -113,97 +133,94 @@ export default function Navigation() {
 							></path>
 						</svg>
 					</button>
-					<div className="flex md:order-2 hidden md:block md:w-auto">
-						<>
-							<button
-								id="dropdownUserAvatarButton"
-								data-dropdown-toggle="dropdownAvatar"
-								className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-								type="button"
-							>
-								<span className="sr-only">Open user menu</span>
-								<Image
-									className="w-8 h-8 rounded-full"
-									src="/images/profile-picture.webp"
-									width={32}
-									height={32}
-									alt="user photo"
-								/>
-							</button>
-							{/* Dropdown menu */}
-							<div
-								id="dropdownAvatar"
-								className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-							>
-								<div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-									<div>Manuel Serna Eugenio</div>
-									<div className="font-medium truncate">
-										mansereug@alu.edu.gva.es
+
+					{user && (
+						<div className="flex md:order-2 md:block md:w-auto">
+							<>
+								<button
+									id="dropdownUserAvatarButton"
+									data-dropdown-toggle="dropdownAvatar"
+									className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+									type="button"
+								>
+									<span className="sr-only">Open user menu</span>
+									<Image
+										className="w-8 h-8 rounded-full"
+										src={"https://www.gravatar.com/avatar/" + md5(user.email)}
+										width={32}
+										height={32}
+										alt="user photo"
+									/>
+								</button>
+								{/* Dropdown menu */}
+								<div
+									id="dropdownAvatar"
+									className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+								>
+									<div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+										<div>{user.name}</div>
+										<div className="font-medium truncate"> {user.email} </div>
+									</div>
+									<ul
+										className="py-2 text-sm text-gray-700 dark:text-gray-200"
+										aria-labelledby="dropdownUserAvatarButton"
+									>
+										<li>
+											<a
+												href="#"
+												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+											>
+												Mi panel
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+											>
+												Ajustes
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+											>
+												Mensajes{" "}
+												<span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-white bg-orange-400 rounded-full">
+													2
+												</span>
+											</a>
+										</li>
+									</ul>
+									<div className="py-2">
+										<a
+											href="#"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+											onClick={() => logoutUser()}
+										>
+											Log out
+										</a>
 									</div>
 								</div>
-								<ul
-									className="py-2 text-sm text-gray-700 dark:text-gray-200"
-									aria-labelledby="dropdownUserAvatarButton"
-								>
-									<li>
-										<a
-											href="#"
-											className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-										>
-											Mi panel
-										</a>
-									</li>
-									<li>
-										<a
-											href="#"
-											className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-										>
-											Ajustes
-										</a>
-									</li>
-									<li>
-										<a
-											href="#"
-											className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-										>
-											Mensajes{" "}
-											<span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-white bg-orange-400 rounded-full">
-												2
-											</span>
-										</a>
-									</li>
-								</ul>
-								<div className="py-2">
-									<a
-										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-									>
-										Log out
-									</a>
-								</div>
-							</div>
-						</>
-					</div>
-					<div className="hidden md:flex md:order-2 md:w-auto gap-2">
-						<Link href="/login">
-							<Button className="bg-white hover:bg-gray-100 border-2 border-orange-400">
-								<span className="text-orange-400">Inicia Sesión</span>{" "}
-							</Button>
-						</Link>
-						<Link href="/register">
-							<Button className="bg-orange-400 shadow-lg hover:bg-orange-300 text-white rounded-full">
-								<span className="text-white">Regístrate</span>{" "}
-							</Button>
-						</Link>
-					</div>
-					{/* <div className="flex md:order-2 md:block md:w-auto">
-						<Button
-							pill={true}
-							className="bg-white shadow-lg hover:bg-gray-200 border-1 border-orange-400 rounded-full"
-						>
-							<span className="text-orange-400">Inicia Sesión</span>{" "}
-						</Button>
-					</div> */}
+							</>
+						</div>
+					)}
+
+					{!user && (
+						<div className="hidden md:flex md:order-2 md:w-auto gap-2">
+							<Link href="/login">
+								<Button className="bg-white hover:bg-gray-100 border-2 border-orange-400">
+									<span className="text-orange-400">Inicia Sesión</span>{" "}
+								</Button>
+							</Link>
+							<Link href="/register">
+								<Button className="bg-orange-400 shadow-lg hover:bg-orange-300 text-white rounded-full">
+									<span className="text-white">Regístrate</span>{" "}
+								</Button>
+							</Link>
+						</div>
+					)}
 					<div className="hidden w-full md:block md:w-auto" id="navbar-default">
 						<ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white  dark:border-gray-700">
 							<li>
@@ -238,25 +255,26 @@ export default function Navigation() {
 									Sé un petcare+
 								</Link>
 							</li>
-
-							<div className="block pt-4 md:hidden">
-								<li>
-									<Link
-										href="/login"
-										className="flex gap-2 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-									>
-										Inicia Sesión
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="/register"
-										className="flex gap-2 py-2 pl-3 pr-4 text-orange-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-									>
-										Regístrate
-									</Link>
-								</li>
-							</div>
+							{user && (
+								<div className="block pt-4 md:hidden">
+									<li>
+										<Link
+											href="/login"
+											className="flex gap-2 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+										>
+											Inicia Sesión
+										</Link>
+									</li>
+									<li>
+										<Link
+											href="/register"
+											className="flex gap-2 py-2 pl-3 pr-4 text-orange-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+										>
+											Regístrate
+										</Link>
+									</li>
+								</div>
+							)}
 						</ul>
 					</div>
 				</div>

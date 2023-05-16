@@ -4,6 +4,8 @@ import "flowbite";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Navigation/Footer";
 import { UpToTop } from "@/components/Elements/UpToTop";
+import { useEffect, useState } from "react";
+import isAuthenticated from "@/lib/isAuthenticated";
 
 export default function Document() {
 	return (
@@ -19,7 +21,7 @@ export default function Document() {
 				></link>
 			</Head>
 			<body>
-				<Navigation></Navigation>
+				
 				<Main />
 				<NextScript />
 
