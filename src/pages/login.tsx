@@ -16,12 +16,12 @@ export default function Login() {
 		loginUser(e)
 			.then((res: any) => {
 				setLogin(res);
-                setError(false);
+				setError(false);
 				e.target.reset(); // Eliminamos los datos del formulario y redireccionamos al usuario.
 
 				console.log(login);
 				localStorage.setItem("token", res.token);
-                
+
 				setTimeout(() => {
 					window.location.href = "/"; //  Redirigimos al usuario.
 				}, 2000);
