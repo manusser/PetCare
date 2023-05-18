@@ -191,9 +191,9 @@ export const RegisterForms = () => {
 													</button>
 													<p className="mt-4 text-sm text-gray-500 sm:mt-0">
 														¿Ya tienes una cuenta?{" "}
-														<a href="#" className="text-gray-700 underline">
+														<Link href="/login" className="text-gray-700 underline">
 															Inicia Sesión
-														</a>
+														</Link>
 														.
 													</p>
 												</div>
