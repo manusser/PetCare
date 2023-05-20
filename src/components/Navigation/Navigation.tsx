@@ -10,6 +10,7 @@ import { getToken, logoutUser } from "@/controllers/userController";
 import { useEffect, useState } from "react";
 import { getUserData } from "@/lib/userData";
 import md5 from "md5";
+import ChatBubbleIcon from "../Icons/ChatBubbleIcon";
 
 export default function Navigation() {
 	const [token, setToken] = useState<string | null>(null);
@@ -23,7 +24,6 @@ export default function Navigation() {
 				setToken(tokenls);
 				const data = getUserData(tokenls);
 				setUser(data);
-				console.log(data);
 			}
 		}
 	}, []);
@@ -31,73 +31,75 @@ export default function Navigation() {
 	return (
 		<>
 			{/* MOBILE NAVBAR */}
-			<div className="pt-12 sm:pt-16 lg:pt-24 md:hidden fixed bottom-0 w-full z-10 pt-50">
-				<nav className="sticky bottom-0 mx-auto w-full sm:max-w-md">
-					<a
-						href="#"
-						className="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-3xl bg-orange-400 text-white shadow-lg transition duration-100 hover:bg-orange-600 sm:-top-8 sm:h-16 sm:w-16"
-					>
-						<svg
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							viewBox="0 0 24 24"
-							className="h-6 w-6 text-white"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
+			{user && (
+				<div className="pt-12 sm:pt-16 lg:pt-24 md:hidden fixed bottom-0 w-full z-10 pt-50">
+					<nav className="sticky bottom-0 mx-auto w-full sm:max-w-md">
+						<a
+							href="#"
+							className="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center just-y-center rounded-3xl bg-orange-400 text-white shadow-lg transition duration-100 hover:bg-orange-600 sm:-top-8 sm:h-16 sm:w-16"
 						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-							></path>
-						</svg>
-					</a>
-
-					<div className="flex justify-between gap-8 border-t bg-white px-10 py-4 text-xs sm:rounded-t-xl sm:border-transparent sm:text-sm sm:shadow-2xl">
-						<span className="flex flex-col items-center gap-1 text-orange-500">
 							<svg
-								className="h-6 w-6"
-								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.5"
 								viewBox="0 0 24 24"
-								fill="currentColor"
+								className="h-6 w-6 text-white"
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true"
 							>
-								<path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-								<path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+								></path>
 							</svg>
-
-							<span>Inicio</span>
-						</span>
-
-						<a
-							href="#"
-							className="mr-4 flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 sm:mr-8"
-						>
-							<MessageIcon width="6" height="6"></MessageIcon>
-
-							<span>Mensajes</span>
 						</a>
 
-						<a
-							href="#"
-							className="ml-4 flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 sm:ml-8"
-						>
-							<SearchIcon width="6" height="6"></SearchIcon>
+						<div className="flex justify-between gap-8 border-t bg-white px-10 py-4 text-xs sm:rounded-t-xl sm:border-transparent sm:text-sm sm:shadow-2xl">
+							<span className="flex flex-col items-center gap-1 text-orange-500">
+								<svg
+									className="h-6 w-6"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+									<path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+								</svg>
 
-							<span>Buscar</span>
-						</a>
+								<span>Inicio</span>
+							</span>
 
-						<a
-							href="#"
-							className="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-						>
-							<QuestionMarkIcon></QuestionMarkIcon>
+							<a
+								href="#"
+								className="mr-4 flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 sm:mr-8"
+							>
+								<MessageIcon width="6" height="6"></MessageIcon>
 
-							<span>Ayuda</span>
-						</a>
-					</div>
-				</nav>
-			</div>
+								<span>Mensajes</span>
+							</a>
+
+							<a
+								href="#"
+								className="ml-4 flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 sm:ml-8"
+							>
+								<SearchIcon width="6" height="6"></SearchIcon>
+
+								<span>Buscar</span>
+							</a>
+
+							<a
+								href="#"
+								className="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+							>
+								<QuestionMarkIcon></QuestionMarkIcon>
+
+								<span>Ayuda</span>
+							</a>
+						</div>
+					</nav>
+				</div>
+			)}
 
 			{/* PC NAVBAR */}
 			<nav className="bg-white border-gray-200 shadow-lg">
@@ -203,6 +205,9 @@ export default function Navigation() {
 										</a>
 									</div>
 								</div>
+
+								{/* Messages Icon */}
+								<ChatBubbleIcon width={8} height={8}></ChatBubbleIcon>
 							</>
 						</div>
 					)}

@@ -13,13 +13,9 @@ import SunIcon from "@/components/Icons/SunIcon";
 import { useEffect } from "react";
 import { getToken } from "@/controllers/userController";
 import isAuthenticated from "@/lib/isAuthenticated";
-
-const inter = Inter({ subsets: ["latin"] });
+import SearchForm from "@/components/Home/SearchForm";
 
 export default function Home() {
-	useEffect(() => {
-		// console.log(getToken());
-	}, []);
 
 	return (
 		<>
@@ -41,7 +37,7 @@ export default function Home() {
 						Encuentre cuidadores de mascotas
 					</h1>
 
-					<section className="mb-4">
+					{/* <section className="mb-4">
 						<p className="mb-4 mt-2 text-center text-lg text-indigo-100 sm:text-xl md:mb-2 md:mt-5">
 							¿Qué servicio buscas?
 						</p>
@@ -133,142 +129,12 @@ export default function Home() {
 								</label>
 							</li>
 						</ul>
+					</section> */}
+
+					<section className="mb-4">
+						<SearchForm></SearchForm>
 					</section>
 
-					<div className="grid gap-3 md:grid-cols-2">
-						{/* INPUT LOCATION */}
-						<div>
-							<p className="mb-4 mt-2 text-center text-lg text-indigo-100 sm:text-xl md:mb-2 md:mt-5">
-								¿Dónde buscas estos servicios?
-							</p>
-							<div className="relative w-full">
-								<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-									<SearchIcon></SearchIcon>
-								</div>
-								<input
-									type="text"
-									id="email-address-icon"
-									className="rounded-lg text-center text-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-									placeholder="Almoradí, Alicante"
-								/>
-							</div>
-						</div>
-
-						<div>
-							{/* PET SELECTION */}
-							<p className="mb-4 mt-2 text-center text-lg text-indigo-100 sm:text-xl md:mb-2 md:mt-5">
-								Mi amigo peludo es...
-							</p>
-
-							<section className="flex w-full justify-center">
-								<div
-									className="grid w-[20rem] grid-cols-2 space-x-2 rounded-xl bg-white p-1"
-									x-data="app"
-								>
-									<div>
-										<input
-											type="radio"
-											name="option"
-											id="1"
-											className="peer hidden"
-											defaultChecked={true}
-										/>
-										<label
-											htmlFor="1"
-											className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-orange-400 peer-checked:font-bold peer-checked:text-white"
-										>
-											Perro
-										</label>
-									</div>
-									<div>
-										<input
-											type="radio"
-											name="option"
-											id="2"
-											className="peer hidden"
-										/>
-										<label
-											htmlFor="2"
-											className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-orange-400 peer-checked:font-bold peer-checked:text-white"
-										>
-											Gato
-										</label>
-									</div>
-								</div>
-							</section>
-						</div>
-					</div>
-
-					{/* DATE SELECTION */}
-
-					<div
-						date-rangepicker=""
-						datepicker-format="dd/mm/yyyy"
-						className="items-center mt-5 gap-8 block md:flex"
-					>
-						<div>
-							<span className="mx-4 text-indigo-100">Desde...</span>
-							<div className="relative">
-								<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-									<svg
-										aria-hidden="true"
-										className="w-5 h-5 text-gray-500 dark:text-gray-400"
-										fill="currentColor"
-										viewBox="0 0 20 20"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											fillRule="evenodd"
-											d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								</div>
-								<input
-									name="start"
-									type="text"
-									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-									placeholder="Fecha de inicio"
-								/>
-							</div>
-						</div>
-						<div>
-							<span className="mx-4 text-indigo-100">Hasta...</span>
-							<div className="relative">
-								<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-									<svg
-										aria-hidden="true"
-										className="w-5 h-5 text-gray-500 dark:text-gray-400"
-										fill="currentColor"
-										viewBox="0 0 20 20"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											fillRule="evenodd"
-											d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								</div>
-								<input
-									name="end"
-									type="text"
-									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-									placeholder="Fecha de fin"
-								/>
-							</div>
-						</div>
-					</div>
-
-					<div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center mt-5 md:mt-10">
-						<a
-							href="#"
-							className="flex gap-2 rounded-lg bg-orange-400 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-500 focus-visible:ring active:bg-orange-700 md:text-base"
-						>
-							<SearchIcon width="6" height="6" color="white"></SearchIcon>{" "}
-							Buscar
-						</a>
-					</div>
 				</div>
 			</section>
 

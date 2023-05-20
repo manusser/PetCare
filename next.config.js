@@ -2,7 +2,8 @@
 const nextConfig = {
 	reactStrictMode: true,
 	env: {
-		API_URL: "https://pet-care-backend.vercel.app",
+		// API_URL: "https://pet-care-backend.vercel.app",
+		API_URL: "http://localhost:3000",
 	},
 	images: {
 		remotePatterns: [
