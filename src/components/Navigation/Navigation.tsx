@@ -1,4 +1,4 @@
-import { Button } from "flowbite-react";
+import { Avatar, Button, Dropdown } from "flowbite-react";
 import SearchIcon from "../Icons/SearchIcon";
 import HeartIcon from "../Icons/HeartIcon";
 import BankNotesIcon from "../Icons/BankNotesIcon";
@@ -141,72 +141,35 @@ export default function Navigation() {
 							<>
 								{/* Messages Icon */}
 								<ChatBubbleIcon width={6} height={6}></ChatBubbleIcon>(2)
-								<button
-									id="dropdownUserAvatarButton"
-									data-dropdown-toggle="dropdownAvatar"
-									className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-									type="button"
+								<Dropdown
+									label={
+										<Avatar
+											alt="User settings"
+											img={"https://www.gravatar.com/avatar/" + md5(user.email)}
+											rounded={true}
+										/>
+									}
+									arrowIcon={false}
+									inline={true}
 								>
-									<span className="sr-only">Open user menu</span>
-									<Image
-										className="w-8 h-8 rounded-full"
-										src={"https://www.gravatar.com/avatar/" + md5(user.email)}
-										width={32}
-										height={32}
-										alt="user photo"
-									/>
-								</button>
-								{/* Dropdown menu */}
-								<div
-									id="dropdownAvatar"
-									className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-								>
-									<div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-										<div>{user.name}</div>
-										<div className="font-medium truncate"> {user.email} </div>
-									</div>
-									<ul
-										className="py-2 text-sm text-gray-700 dark:text-gray-200"
-										aria-labelledby="dropdownUserAvatarButton"
+									<Dropdown.Header>
+										<span className="block text-sm">{user.name}</span>
+										<span className="block truncate text-sm font-medium">
+											{user.email}
+										</span>
+									</Dropdown.Header>
+									<Dropdown.Item>Dashboard</Dropdown.Item>
+									<Dropdown.Item>Settings</Dropdown.Item>
+									<Dropdown.Item>Earnings</Dropdown.Item>
+									<Dropdown.Divider />
+									<Dropdown.Item
+										onClick={() => {
+											logoutUser();
+										}}
 									>
-										<li>
-											<a
-												href="#"
-												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-											>
-												Mi panel
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-											>
-												Ajustes
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-											>
-												Mensajes{" "}
-												<span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-white bg-orange-400 rounded-full">
-													2
-												</span>
-											</a>
-										</li>
-									</ul>
-									<div className="py-2">
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-											onClick={() => logoutUser()}
-										>
-											Log out
-										</a>
-									</div>
-								</div>
+										Cerrar Sesión
+									</Dropdown.Item>
+								</Dropdown>
 								<Button className="bg-orange-400 hover:bg-orange-500 text-white border-2 border-orange-400 hidden md:block">
 									<span className="text-white">Nuevo Anuncio</span>{" "}
 								</Button>
