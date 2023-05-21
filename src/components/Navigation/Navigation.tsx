@@ -36,7 +36,7 @@ export default function Navigation() {
 					<nav className="sticky bottom-0 mx-auto w-full sm:max-w-md">
 						<a
 							href="#"
-							className="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center just-y-center rounded-3xl bg-orange-400 text-white shadow-lg transition duration-100 hover:bg-orange-600 sm:-top-8 sm:h-16 sm:w-16"
+							className="justify-center  absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center just-y-center rounded-3xl bg-orange-400 text-white shadow-lg transition duration-100 hover:bg-orange-600 sm:-top-8 sm:h-16 sm:w-16"
 						>
 							<svg
 								fill="none"
@@ -137,8 +137,10 @@ export default function Navigation() {
 					</button>
 
 					{user && (
-						<div className="flex md:order-2 md:block md:w-auto">
+						<div className="flex md:order-2 gap-2 md:w-auto justify-center items-center">
 							<>
+								{/* Messages Icon */}
+								<ChatBubbleIcon width={6} height={6}></ChatBubbleIcon>(2)
 								<button
 									id="dropdownUserAvatarButton"
 									data-dropdown-toggle="dropdownAvatar"
@@ -205,9 +207,9 @@ export default function Navigation() {
 										</a>
 									</div>
 								</div>
-
-								{/* Messages Icon */}
-								<ChatBubbleIcon width={8} height={8}></ChatBubbleIcon>
+								<Button className="bg-orange-400 hover:bg-orange-500 text-white border-2 border-orange-400 hidden md:block">
+									<span className="text-white">Nuevo Anuncio</span>{" "}
+								</Button>
 							</>
 						</div>
 					)}
@@ -260,6 +262,20 @@ export default function Navigation() {
 									Sé un petcare+
 								</Link>
 							</li>
+
+							{user && (
+								<div className="block pt-4 md:hidden">
+									<li>
+										<Link
+											href="/login"
+											className="bg-orange-400 text-white flex gap-2 py-2 pl-3 pr-4  rounded hover:bg-orange-500 md:hover:bg-transparent md:border-0  md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+										>
+											Nuevo Anuncio
+										</Link>
+									</li>
+								</div>
+							)}
+
 							{!user && (
 								<div className="block pt-4 md:hidden">
 									<li>

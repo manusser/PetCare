@@ -52,7 +52,7 @@ export default function PetCarePlus() {
 								ventajas.
 							</p>
 						</div>
-						<div className="mb-10 md:mb-16">
+						<div className="mb-4 md:mb-16">
 							<PricingCards></PricingCards>
 						</div>
 					</div>
