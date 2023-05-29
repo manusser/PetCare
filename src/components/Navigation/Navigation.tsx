@@ -158,9 +158,9 @@ export default function Navigation() {
 											{user.email}
 										</span>
 									</Dropdown.Header>
-									<Dropdown.Item>Dashboard</Dropdown.Item>
-									<Dropdown.Item>Settings</Dropdown.Item>
-									<Dropdown.Item>Earnings</Dropdown.Item>
+									<Dropdown.Item>Mi panel</Dropdown.Item>
+									<Dropdown.Item>Ajustes</Dropdown.Item>
+									<Dropdown.Item>Ingresos</Dropdown.Item>
 									<Dropdown.Divider />
 									<Dropdown.Item
 										onClick={() => {
@@ -195,7 +195,7 @@ export default function Navigation() {
 						<ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white  dark:border-gray-700">
 							<li>
 								<Link
-									href="/"
+									href="/search"
 									className="flex py-2 pl-2 gap-2 pr-4 hover:bg-gray-100 md:hover:bg-transparent text-black rounded md:hover:text-orange-400 md:bg-transparent md:p-0 dark:text-white md:dark:orange-blue-500"
 									aria-current="page"
 								>

@@ -12,12 +12,12 @@
     color: white;
 } */
 
-input+label {
+input.home-selector+label {
     background: white;
     border-radius: 15px;
 }
 
-input:checked+label {
+input.home-selector:checked+label {
     border-color: black;
     background: #ffbc7dee;
     /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */

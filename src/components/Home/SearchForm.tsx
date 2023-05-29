@@ -106,7 +106,7 @@ const SearchForm = () => {
 			<div className="grid md:grid-cols-4 grid-cols-2 gap-2 w-full max-w-screen-sm">
 				<div>
 					<input
-						className="hidden"
+						className="hidden home-selector"
 						id="larga-temporada"
 						type="radio"
 						name="radio"
@@ -125,7 +125,7 @@ const SearchForm = () => {
 				</div>
 				<div>
 					<input
-						className="hidden"
+						className="hidden home-selector"
 						id="corta-temporada"
 						type="radio"
 						name="radio"
@@ -143,7 +143,12 @@ const SearchForm = () => {
 					</label>
 				</div>
 				<div>
-					<input className="hidden" id="paseos" type="radio" name="radio" />
+					<input
+						className="hidden home-selector"
+						id="paseos"
+						type="radio"
+						name="radio"
+					/>
 					<label
 						className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer items-center"
 						htmlFor="paseos"
@@ -155,7 +160,12 @@ const SearchForm = () => {
 					</label>
 				</div>
 				<div>
-					<input className="hidden" id="guarderias" type="radio" name="radio" />
+					<input
+						className="hidden home-selector"
+						id="guarderias"
+						type="radio"
+						name="radio"
+					/>
 					<label
 						className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer items-center"
 						htmlFor="guarderias"
