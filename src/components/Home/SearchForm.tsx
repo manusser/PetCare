@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HomeIcon from "../Icons/HomeIcon";
 import HouseMoonIcon from "../Icons/HouseMoonIcon";
 import PawWalkIcon from "../Icons/PawWalkIcon";
@@ -305,12 +306,12 @@ const SearchForm = () => {
 			</div>
 
 			<div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center mt-5 md:mt-10">
-				<a
-					href="#"
+				<Link
+					href="/search"
 					className="flex gap-2 rounded-lg bg-orange-400 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-500 focus-visible:ring active:bg-orange-700 md:text-base"
 				>
 					<SearchIcon width="6" height="6" color="white"></SearchIcon> Buscar
-				</a>
+				</Link>
 			</div>
 		</>
 	);

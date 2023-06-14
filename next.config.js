@@ -2,8 +2,8 @@
 const nextConfig = {
 	reactStrictMode: true,
 	env: {
-		API_URL: "https://pet-care-backend.vercel.app",
-		// API_URL: "http://localhost:3000",
+		// API_URL: "https://pet-care-backend.vercel.app",
+		API_URL: "http://localhost:3000",
 	},
 	images: {
 		remotePatterns: [
@@ -18,6 +18,12 @@ const nextConfig = {
 				hostname: "img1.picmix.com",
 				port: "",
 				pathname: "/*/**",
+			},
+			{
+				protocol: "https",
+				hostname: "xsgames.co",
+				port: "",
+				pathname: "/**/**",
 			},
 			{
 				protocol: "https",

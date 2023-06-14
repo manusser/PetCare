@@ -170,9 +170,12 @@ export default function Navigation() {
 										Cerrar Sesión
 									</Dropdown.Item>
 								</Dropdown>
-								<Button className="bg-orange-400 hover:bg-orange-500 text-white border-2 border-orange-400 hidden md:block">
+								<Link
+									href="/new-service"
+									className="bg-orange-400 hover:bg-orange-500 text-white border-2 border-orange-400 hidden md:block rounded-xl p-2"
+								>
 									<span className="text-white">Nuevo Anuncio</span>{" "}
-								</Button>
+								</Link>
 							</>
 						</div>
 					)}
@@ -230,7 +233,7 @@ export default function Navigation() {
 								<div className="block pt-4 md:hidden">
 									<li>
 										<Link
-											href="/login"
+											href="/new-service"
 											className="bg-orange-400 text-white flex gap-2 py-2 pl-3 pr-4  rounded hover:bg-orange-500 md:hover:bg-transparent md:border-0  md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
 										>
 											Nuevo Anuncio
