@@ -5,6 +5,7 @@ import SunIcon from "@/components/Icons/SunIcon";
 import { getToken, postNewService } from "@/controllers/userController";
 import { getUserData } from "@/lib/userData";
 import { Textarea } from "flowbite-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function NewService() {
@@ -251,12 +252,12 @@ export default function NewService() {
 								className="mt-2 text-sm text-gray-500 dark:text-gray-400"
 							>
 								Por favor, visita nuestro listado de{" "}
-								<a
+								<Link
 									href="/search"
 									className="font-medium text-orange-400 hover:underline dark:text-orange-400"
 								>
 									servicios{" "}
-								</a>
+								</Link>
 								antes de publicar un anuncio.
 							</p>
 						</div>

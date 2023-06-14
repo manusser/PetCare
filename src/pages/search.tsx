@@ -136,7 +136,7 @@ export default function NewService() {
 										});
 
 										return (
-											<li className="py-3 sm:py-4 hover:cursor-pointer hover:border-l-4 hover:border-orange-500">
+											<li key={service.id} className="py-3 sm:py-4 hover:cursor-pointer hover:border-l-4 hover:border-orange-500">
 												<div className="flex items-center space-x-4">
 													<div className="shrink-0">
 														<Image
